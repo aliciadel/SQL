@@ -1,0 +1,36 @@
+--Create a clothes store database
+
+CREATE TABLE merchandise(id INTEGER PRIMARY KEY, name TEXT, price INTEGER, color TEXT, category TEXT);
+
+INSERT INTO merchandise VALUES
+(1, "Cargo Pants", 50, "Tan", "Bottoms"),
+(2, "Cargo Pants", 50, "Black", "Bottoms"),
+(3, "T-Shirt", 12, "White", "Tops"),
+(4, "Headband", 8, "Pink", "Accessories"),
+(5, "Leggings", 35, "Black", "Bottoms"),
+(6, "Sweatpants", 25, "Green", "Bottoms"),
+(7, "Dress Pants", 45, "Black", "Bottoms"),
+(8, "Trench coat", 140, "Tan", "Outerwear"),
+(9, "Flannel", 19, "Red", "Tops"),
+(10, "Blouse", 24, "Pink", "Tops"),
+(11, "Camisole", 9, "Yellow", "Tops"),
+(12, "Leather Jacket", 180, "Black", "Outerwear"),
+(13, "Jean Jacket", 49, "Blue", "Outerwear"),
+(14, "Belt", 25, "Black", "Accessories"),
+(15, "Tote Bag", 27, "Tan", "Accessories"),
+(16, "Earrings", 15, "Gold", "Accessories"),
+(17, "Bracelet", 12, "Gold", "Accessories"),
+(18, "Socks", 8, "White", "Accessories");
+
+-- display the database ordered by price
+SELECT * FROM merchandise ORDER BY price asc;
+
+-- displays the number of clothing items in each category
+SELECT category, count(*) FROM merchandise GROUP BY category;
+
+-- displays the average price of a clothing item in each category
+SELECT category, AVG(price) FROM merchandise GROUP BY category;
+
+-- displays the number of clothing items sold by color
+SELECT color, count(*) FROM merchandise GROUP BY color;
+
